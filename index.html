@@ -1,0 +1,529 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Bisnis Online Summit 2026 — Upgrade Strategi dengan Teknologi & AI</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;700;800&display=swap" rel="stylesheet">
+<style>
+:root{
+  --black:#000;
+  --navy:#030b24;
+  --blue-deep:#0a2a8a;
+  --blue:#1e5bff;
+  --blue-light:#6fa0ff;
+  --text:#e8eefc;
+  --muted:#a9b8dc;
+  --line:rgba(111,160,255,.28);
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:auto}
+body{
+  font-family:'Plus Jakarta Sans',system-ui,-apple-system,'Segoe UI',Arial,sans-serif;
+  background:var(--black);
+  color:var(--text);
+  line-height:1.65;
+  font-size:17px;
+}
+.wrap{width:100%;max-width:1100px;margin:0 auto;padding:0 20px}
+section{padding:72px 0}
+.bg-blue{background:linear-gradient(180deg,var(--black) 0%,var(--navy) 35%,var(--blue-deep) 100%)}
+.bg-black{background:var(--black)}
+h1,h2,h3{font-weight:800;line-height:1.15;letter-spacing:-.02em}
+h1{font-size:clamp(34px,7vw,68px)}
+h2{font-size:clamp(28px,4.6vw,46px);margin-bottom:28px}
+h3{font-size:20px;margin-bottom:8px}
+p{margin-bottom:18px;color:var(--text)}
+.muted{color:var(--muted)}
+.big{font-size:clamp(19px,2.6vw,24px);font-weight:500}
+
+/* hero */
+.hero{
+  padding:84px 0 88px;
+  background:
+    radial-gradient(900px 480px at 85% -10%,rgba(30,91,255,.75),transparent 60%),
+    radial-gradient(700px 400px at 0% 100%,rgba(10,42,138,.9),transparent 65%),
+    var(--black);
+}
+.hero h1 span{display:block;color:var(--blue-light)}
+.hero .lead{margin-top:28px;max-width:640px}
+.hero .lead p{color:var(--muted);font-size:19px}
+.hero .lead p:last-child{color:var(--text);font-weight:700}
+.eventbox{
+  margin-top:36px;padding:26px 24px;
+  border:1px solid var(--line);
+  border-left:4px solid var(--blue);
+  background:rgba(3,11,36,.75);
+}
+.eventbox .name{font-weight:800;font-size:22px;margin-bottom:6px}
+.eventbox .sub{color:var(--muted);margin-bottom:16px}
+.eventbox .meta p{margin-bottom:4px;font-weight:500}
+
+/* CTA */
+.cta{
+  display:inline-block;margin-top:28px;
+  padding:18px 34px;
+  font:800 17px/1.2 inherit;font-family:inherit;
+  color:#fff;text-decoration:none;
+  border-radius:10px;
+  background:linear-gradient(90deg,#0a2a8a,#1e5bff,#6fa0ff,#1e5bff,#0a2a8a);
+  background-size:300% 100%;
+  animation:slide 5s linear infinite;
+  box-shadow:0 8px 30px rgba(30,91,255,.45);
+  transition:transform .2s ease,box-shadow .2s ease;
+}
+.cta:hover{transform:translateY(-2px);box-shadow:0 12px 36px rgba(30,91,255,.7)}
+.cta:focus-visible{outline:3px solid #fff;outline-offset:3px}
+@keyframes slide{from{background-position:0% 50%}to{background-position:300% 50%}}
+@media (prefers-reduced-motion:reduce){.cta{animation:none}}
+
+/* problem */
+.problem .wrap,.solution .wrap{max-width:820px}
+.problem p:nth-of-type(n+2){color:var(--muted)}
+.punch{font-weight:700;color:var(--text)!important}
+
+/* solution */
+.flow{
+  margin:28px 0;padding-left:20px;border-left:3px solid var(--blue);
+}
+.flow p{margin-bottom:6px;font-size:21px;font-weight:700;color:var(--blue-light)}
+
+/* grids */
+.grid{display:grid;gap:16px;grid-template-columns:1fr}
+.card{
+  padding:24px;border:1px solid var(--line);
+  background:rgba(3,11,36,.8);
+}
+.card p{margin:0;color:var(--muted)}
+.card .who{margin-top:10px;color:var(--text);font-weight:500}
+.card.wide{background:linear-gradient(135deg,rgba(30,91,255,.35),rgba(3,11,36,.85))}
+@media (min-width:720px){
+  .grid{grid-template-columns:repeat(2,1fr)}
+  .grid.three{grid-template-columns:repeat(3,1fr)}
+  .card.wide{grid-column:1/-1}
+}
+
+/* speakers */
+.speakers{display:grid;gap:0;grid-template-columns:1fr;margin-top:32px}
+.spk{padding:22px 0 22px 20px;border-left:3px solid var(--blue);border-bottom:1px solid var(--line)}
+.spk .n{font-weight:800;font-size:21px}
+.spk .r{color:var(--muted)}
+@media (min-width:720px){
+  .speakers{grid-template-columns:repeat(2,1fr);column-gap:40px}
+}
+@media (min-width:980px){
+  .speakers{grid-template-columns:repeat(3,1fr)}
+}
+
+/* talkshow */
+.talk{
+  background:
+    radial-gradient(800px 380px at 50% 0%,rgba(30,91,255,.55),transparent 65%),
+    var(--black);
+}
+.guests{margin:28px 0;display:grid;gap:14px;grid-template-columns:1fr}
+.guest{padding:20px 22px;border:1px solid var(--line);background:rgba(10,42,138,.28)}
+.guest .n{font-weight:800;font-size:20px}
+.guest .r{color:var(--muted)}
+@media (min-width:720px){.guests{grid-template-columns:repeat(3,1fr)}}
+
+/* audience */
+.aud{display:flex;flex-wrap:wrap;gap:10px;margin:8px 0 28px}
+.aud span{
+  padding:10px 16px;border:1px solid var(--line);
+  background:rgba(3,11,36,.8);font-weight:500;
+}
+.aud span.full{flex-basis:100%}
+
+/* final */
+.final{
+  text-align:center;
+  background:
+    radial-gradient(900px 460px at 50% 100%,rgba(30,91,255,.8),transparent 65%),
+    var(--black);
+}
+.final h2{font-size:clamp(32px,6vw,60px)}
+.final .stack{margin:28px 0}
+.final .stack h3{font-size:clamp(22px,3.4vw,32px);color:var(--blue-light);margin-bottom:4px}
+.final .box{
+  display:inline-block;text-align:left;margin:12px 0 4px;
+  padding:22px 26px;border:1px solid var(--line);border-left:4px solid var(--blue);
+  background:rgba(3,11,36,.8);
+}
+.final .box p{margin-bottom:4px}
+.final .box .name{font-weight:800;font-size:20px;margin-bottom:10px}
+.small{margin-top:22px;color:var(--muted)}
+
+@media (max-width:600px){
+  .wrap{padding:0 12px}
+  section{padding:56px 0}
+  .hero{padding:56px 0 64px}
+  .cta{display:block;text-align:center}
+  .card,.eventbox{padding:20px 16px}
+}
+
+/* nav */
+.nav{display:flex;align-items:center;justify-content:space-between;gap:12px;padding:16px 0 44px}
+.brand{font-weight:800;font-size:16px;line-height:1.1;color:#fff;text-decoration:none}
+.brand small{display:block;font-weight:500;color:var(--blue-light);font-size:13px}
+.nav-links{display:flex;align-items:center;gap:26px}
+.nav-links a{color:#fff;text-decoration:none;font-weight:700;font-size:15px}
+.nav-links a:focus-visible{outline:3px solid #fff;outline-offset:3px}
+.nav-links .pill{padding:11px 22px;border:2px solid #fff;border-radius:999px}
+
+/* hero upgrade */
+.hero{position:relative;overflow:hidden;padding-top:20px}
+.hero .wrap{position:relative;z-index:2}
+.hero-grid{display:grid;gap:56px;grid-template-columns:1fr}
+.poster{width:100%}
+.poster img{display:block;width:100%;height:auto;border-radius:22px;border:1px solid var(--line);
+  box-shadow:0 0 0 6px rgba(30,91,255,.14),0 30px 90px rgba(30,91,255,.55)}
+.shape{position:absolute;z-index:1;pointer-events:none;display:none}
+.shape.star{width:130px;top:150px;right:4%}
+.shape.ring{width:90px;height:90px;border-radius:50%;left:2%;bottom:50px;
+  border:18px solid;border-color:#f4f7ff #7f93bd #e6ecff #4b5f8c;
+  box-shadow:0 12px 30px rgba(30,91,255,.45),inset 0 0 12px rgba(0,0,0,.5)}
+@media (min-width:900px){
+  .shape{display:block}
+}
+
+/* countdown */
+.count{padding:72px 0}
+.panel{position:relative;overflow:hidden;text-align:center;padding:60px 20px;
+  border:1px solid var(--line);border-radius:28px;background:var(--navy)}
+.panel .waves{position:absolute;inset:0;width:100%;height:100%}
+.panel .in{position:relative}
+.badge{display:inline-block;padding:8px 22px;border:1px solid var(--line);border-radius:999px;
+  font-weight:700;font-size:14px;background:#000;margin-bottom:20px}
+.panel h2{margin-bottom:30px}
+.timer{display:flex;justify-content:center;gap:12px;margin-bottom:24px}
+.tbox{min-width:92px;padding:18px 10px;border:1px solid var(--line);border-radius:18px;background:#000}
+.tbox b{display:block;font-size:42px;font-weight:800;line-height:1.1}
+.tbox span{color:var(--muted);font-size:14px}
+.panel .sub{color:var(--muted);margin:0}
+
+/* numbered cards */
+.num-grid{display:grid;gap:16px;grid-template-columns:1fr;margin:24px 0}
+@media (min-width:720px){.num-grid{grid-template-columns:repeat(2,1fr)}}
+.ncard{display:flex;align-items:center;gap:22px;padding:30px 26px;border:1px solid var(--line);
+  border-radius:28px;background:linear-gradient(135deg,rgba(30,91,255,.25),rgba(3,11,36,.92))}
+.ncard .no{font-size:76px;font-weight:800;line-height:1;letter-spacing:-.04em;
+  background:linear-gradient(180deg,#8fb4ff,#1e5bff);-webkit-background-clip:text;background-clip:text;color:transparent}
+.ncard h3{margin-bottom:6px}
+.ncard p{margin:0;color:var(--muted)}
+
+@media (max-width:720px){
+  .nav-links a:not(.pill){display:none}
+  .nav-links .pill{padding:9px 14px;font-size:12px}
+  .brand{font-size:14px}
+}
+@media (max-width:600px){
+  .count{padding:48px 0}
+  .panel{padding:44px 12px;border-radius:20px}
+  .timer{gap:8px}
+  .tbox{min-width:68px;padding:14px 6px;border-radius:14px}
+  .tbox b{font-size:30px}
+  .tbox span{font-size:12px}
+  .ncard{padding:22px 16px;gap:14px;border-radius:22px}
+  .ncard .no{font-size:52px}
+}
+
+/* faq */
+.faq-grid{display:grid;gap:32px;grid-template-columns:1fr;align-items:start}
+.faq-side .star{width:84px;margin-top:8px;display:none}
+@media (min-width:900px){
+  .faq-grid{grid-template-columns:.8fr 1.2fr;gap:56px}
+  .faq-side .star{display:block}
+}
+.faq-list{border:1px solid #fff;border-radius:28px;background:#fff;padding:8px 28px;color:#0a1330}
+.faq-list details{border-bottom:1px solid rgba(10,42,138,.18)}
+.faq-list details:last-child{border-bottom:0}
+.faq-list summary{list-style:none;cursor:pointer;display:flex;justify-content:space-between;align-items:center;
+  gap:16px;padding:22px 0;font-weight:700;font-size:18px}
+.faq-list summary::-webkit-details-marker{display:none}
+.faq-list summary::after{content:"";flex:none;width:10px;height:10px;margin-right:4px;
+  border-right:2px solid var(--blue);border-bottom:2px solid var(--blue);transform:rotate(45deg)}
+.faq-list details[open] summary::after{transform:rotate(-135deg)}
+.faq-list summary:focus-visible{outline:3px solid var(--blue);outline-offset:2px}
+.faq-list details p{margin:0 0 22px;color:#3d4a6b}
+@media (max-width:600px){.faq-list{padding:4px 16px;border-radius:20px}.faq-list summary{font-size:16px}}
+</style>
+</head>
+<body>
+
+<!-- HERO -->
+<header class="hero" id="top">
+  <span class="shape star" aria-hidden="true"><svg viewBox="0 0 100 100"><defs><linearGradient id="sg" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#fff"/><stop offset=".5" stop-color="#8fa3cc"/><stop offset="1" stop-color="#f4f7ff"/></linearGradient></defs><path fill="url(#sg)" d="M50 0C54 34 66 46 100 50C66 54 54 66 50 100C46 66 34 54 0 50C34 46 46 34 50 0Z"/></svg></span>
+  <span class="shape ring" aria-hidden="true"></span>
+  <div class="wrap">
+    <nav class="nav">
+      <a class="brand" href="#top">Bisnis Online Summit<small>2026</small></a>
+      <div class="nav-links">
+        <a href="#top">Beranda</a>
+        <a href="#materi">Materi</a>
+        <a href="#speaker">Speaker</a>
+        <a href="#faq">FAQ</a>
+        <a class="pill" href="#tiket" target="_blank" rel="noopener">AMANKAN TIKET SEKARANG</a>
+      </div>
+    </nav>
+  </div>
+  <div class="wrap hero-grid">
+    <div class="hero-text">
+    <h1>Bisnis Online Makin Kompetitif.
+      <span>Saatnya Upgrade Strategi dengan Teknologi &amp; AI.</span>
+    </h1>
+    <div class="lead">
+      <p>Cara orang berjualan online terus berubah.</p>
+      <p>Marketplace semakin kompetitif. Biaya iklan terus menjadi perhatian. AI mengubah cara bisnis bekerja.</p>
+      <p>Kalau strategi bisnis kamu masih sama seperti beberapa tahun lalu, sekarang waktunya upgrade.</p>
+    </div>
+    <div class="eventbox">
+      <div class="name">🚀 BISNIS ONLINE SUMMIT 2026</div>
+      <div class="sub">Upgrade Strategi, Maksimalkan Profit di Era Teknologi dan AI</div>
+      <div class="meta">
+        <p>📅 Minggu, 17 Mei 2026</p>
+        <p>⏰ 08.30–17.30 WIB</p>
+        <p>📍 Taman Budaya Embung Giwangan, Yogyakarta</p>
+      </div>
+    </div>
+    <!-- Ganti href dengan link tiket / WhatsApp -->
+    <a class="cta" href="#tiket" target="_blank" rel="noopener">AMANKAN TIKET SAYA</a>
+    </div>
+    <div class="poster"><img src="https://raw.githubusercontent.com/mokpolyt/bisnisonsummit/refs/heads/main/images/bods.png" alt="Poster Bisnis Online Summit 2026 beserta para speaker" width="887" height="1156"></div>
+  </div>
+</header>
+
+<!-- COUNTDOWN -->
+<section class="count bg-black">
+  <div class="wrap">
+    <div class="panel">
+      <svg class="waves" viewBox="0 0 800 400" preserveAspectRatio="none" aria-hidden="true" fill="none" stroke="#1e5bff" stroke-opacity=".28">
+        <path d="M0 300C150 180 300 380 450 250S700 150 800 220"/>
+        <path d="M0 330C150 210 300 410 450 280S700 180 800 250"/>
+        <path d="M0 360C150 240 300 440 450 310S700 210 800 280"/>
+        <path d="M0 120C150 40 300 200 450 110S700 20 800 90"/>
+        <path d="M0 150C150 70 300 230 450 140S700 50 800 120"/>
+      </svg>
+      <div class="in">
+        <span class="badge">Tempat terbatas.</span>
+        <h2>Jangan sampai ketinggalan.</h2>
+        <div class="timer" role="timer" aria-label="Hitung mundur menuju acara">
+          <div class="tbox"><b id="cd-d">00</b><span>Hari</span></div>
+          <div class="tbox"><b id="cd-h">00</b><span>Jam</span></div>
+          <div class="tbox"><b id="cd-m">00</b><span>Menit</span></div>
+          <div class="tbox"><b id="cd-s">00</b><span>Detik</span></div>
+        </div>
+        <p class="sub">Minggu, 17 Mei 2026 | 08.30–17.30 WIB</p>
+        <a class="cta" href="#tiket" target="_blank" rel="noopener">AMANKAN TIKET SAYA</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PROBLEM -->
+<section class="problem bg-blue">
+  <div class="wrap">
+    <h2>Bisnis Online Nggak Cukup Hanya Bisa Jualan.</h2>
+    <p class="big">Persaingan bisnis online semakin cepat berubah.</p>
+    <p>Hari ini kamu mungkin masih mengandalkan strategi yang sama untuk mendapatkan penjualan.</p>
+    <p>Besok, kompetitor sudah menggunakan AI, otomatisasi, data, dan strategi advertising yang lebih baru.</p>
+    <p>Akibatnya, semakin sulit untuk sekadar menarik perhatian, mendapatkan customer, dan meningkatkan penjualan.</p>
+    <p>Karena itu, kamu membutuhkan lebih dari sekadar teori.</p>
+    <p class="punch">Kamu perlu memahami apa yang sedang berubah dan bagaimana cara menggunakannya untuk bisnis.</p>
+  </div>
+</section>
+
+<!-- SOLUTION -->
+<section class="solution bg-black">
+  <div class="wrap">
+    <h2>Satu Hari untuk Upgrade Cara Kamu Menjalankan Bisnis Online.</h2>
+    <p>Bisnis Online Summit 2026 mempertemukan praktisi, entrepreneur, marketer, seller, dan digital creator dalam satu event.</p>
+    <p>Bukan sekadar membahas teori.</p>
+    <p>Kamu akan mendapatkan insight mengenai bagaimana teknologi, AI, advertising, marketplace, SEO, data, dan otomatisasi dapat digunakan dalam bisnis online.</p>
+    <div class="flow">
+      <p>Dari mendapatkan traffic...</p>
+      <p>Mengoptimalkan iklan...</p>
+      <p>Membaca data...</p>
+      <p>Sampai mengotomatisasi pekerjaan yang sebelumnya dilakukan secara manual.</p>
+    </div>
+    <p class="punch">Semua dibahas langsung oleh praktisi di bidangnya.</p>
+  </div>
+</section>
+
+<!-- MATERI -->
+<section class="bg-blue" id="materi">
+  <div class="wrap">
+    <h2>Apa yang Akan Kamu Pelajari?</h2>
+    <div class="grid">
+      <div class="card">
+        <h3>🛒 Shopee GMV Max</h3>
+        <p>Pelajari strategi scaling iklan Shopee di era GMV Max bersama Mahdi Assyarqi, Founder Autoads &amp; Autopreneur.id.</p>
+      </div>
+      <div class="card">
+        <h3>🔎 SEO di Era AI</h3>
+        <p>Bagaimana website tetap memiliki peluang mendapatkan traffic dari Google ketika AI mengubah cara orang mencari informasi?</p>
+        <p class="who">Bersama Didik Arwinsyah, Founder SEO United.</p>
+      </div>
+      <div class="card">
+        <h3>📊 Meta Ads &amp; Data Analytics</h3>
+        <p>Pelajari bagaimana data dapat digunakan untuk memahami dan mengoptimalkan performa Meta Ads bersama Bondan Satria Nusantara.</p>
+      </div>
+      <div class="card">
+        <h3>🤖 Customer Service dengan AI</h3>
+        <p>Temukan cara mengoptimalkan dan mengotomatisasi customer service menggunakan AI bersama Hafian Fuad, Co-Founder Wuapic Visual Studio.</p>
+      </div>
+      <div class="card">
+        <h3>🎯 TikTok GMV Max</h3>
+        <p>Deep dive mengenai strategi GMV Max TikTok bersama Alda Rezma, CEO &amp; Founder Straight Up Digital.</p>
+      </div>
+      <div class="card wide">
+        <h3>⚡ Dan berbagai insight lainnya</h3>
+        <p style="color:var(--text)">Termasuk perspektif teknologi, AI, bisnis digital, dan strategi pertumbuhan dari para praktisi.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SPEAKER -->
+<section class="bg-black" id="speaker">
+  <div class="wrap">
+    <h2>Belajar Langsung dari Praktisi</h2>
+    <p class="big">Bukan hanya satu perspektif.</p>
+    <p class="muted">Kamu akan mendapatkan berbagai sudut pandang dari praktisi yang aktif di dunia bisnis dan digital.</p>
+    <div class="speakers">
+      <div class="spk"><div class="n">Mahdi Assyarqi</div><div class="r">Founder Autoads &amp; Autopreneur.id</div></div>
+      <div class="spk"><div class="n">Didik Arwinsyah</div><div class="r">Founder SEO United</div></div>
+      <div class="spk"><div class="n">Ibrahim Vatih</div><div class="r">Co-Founder Alusio &amp; Sintesa</div></div>
+      <div class="spk"><div class="n">Bondan Satria Nusantara</div><div class="r">Storyteller &amp; Brand Enthusiast</div></div>
+      <div class="spk"><div class="n">Hafian Fuad</div><div class="r">Co-Founder Wuapic Visual Studio</div></div>
+      <div class="spk"><div class="n">Alda Rezma</div><div class="r">CEO &amp; Founder Straight Up Digital</div></div>
+    </div>
+  </div>
+</section>
+
+<!-- TALKSHOW -->
+<section class="talk">
+  <div class="wrap">
+    <h2>⭐ Special Talkshow</h2>
+    <p class="big">Selain sesi materi, kamu juga akan mendapatkan perspektif langsung dari para pelaku bisnis dan digital creator.</p>
+    <div class="guests">
+      <div class="guest"><div class="n">🎙 Wildan Salim</div><div class="r">Founder Fadkhera</div></div>
+      <div class="guest"><div class="n">🎙 Widya Supena</div><div class="r">Founder Nutriflakes</div></div>
+      <div class="guest"><div class="n">🎙 Dara Sarasvati</div><div class="r">Digital Creator</div></div>
+    </div>
+    <p class="punch">Satu panggung.</p>
+    <p class="muted">Berbagai pengalaman.</p>
+    <p class="muted">Berbagai perspektif tentang membangun bisnis dan personal brand di era digital.</p>
+  </div>
+</section>
+
+<!-- AUDIENCE -->
+<section class="bg-blue">
+  <div class="wrap">
+    <h2>Event Ini Cocok untuk Kamu yang...</h2>
+    <div class="aud">
+      <span>✅ Seller Shopee atau marketplace lainnya</span>
+      <span>✅ Owner bisnis online</span>
+      <span>✅ Digital marketer</span>
+      <span>✅ Affiliate marketer</span>
+      <span>✅ Advertiser</span>
+      <span>✅ Digital creator</span>
+      <span class="full">✅ Siapa pun yang ingin memahami perkembangan teknologi, AI, dan digital marketing untuk bisnis.</span>
+    </div>
+    <p class="big">Tidak harus menjadi expert.</p>
+    <p class="muted">Yang penting, kamu punya keinginan untuk belajar, beradaptasi, dan mengembangkan bisnis.</p>
+  </div>
+</section>
+
+<!-- BENEFITS -->
+<section class="bg-black">
+  <div class="wrap">
+    <h2>Bukan Sekadar Datang ke Seminar.</h2>
+    <p class="big">Di sini kamu bisa mendapatkan:</p>
+    <div class="num-grid">
+      <div class="ncard"><span class="no">01</span><div><h3>💡 Insight terbaru</h3><p>Memahami perkembangan teknologi, AI, marketplace, dan digital marketing.</p></div></div>
+      <div class="ncard"><span class="no">02</span><div><h3>🛠 Materi praktis</h3><p>Mendapatkan insight yang dapat kamu pelajari dan terapkan dalam bisnis.</p></div></div>
+      <div class="ncard"><span class="no">03</span><div><h3>🎙 Belajar dari praktisi</h3><p>Mendengar pengalaman dan strategi dari orang yang aktif di industri.</p></div></div>
+      <div class="ncard"><span class="no">04</span><div><h3>🤝 Networking</h3><p>Bertemu seller, entrepreneur, marketer, advertiser, dan pelaku bisnis online lainnya.</p></div></div>
+    </div>
+    <p class="punch big">Karena terkadang, satu insight baru bisa mengubah cara kamu melihat bisnis.</p>
+  </div>
+</section>
+
+<!-- FAQ -->
+<section class="bg-blue" id="faq">
+  <div class="wrap faq-grid">
+    <div class="faq-side">
+      <h2>Pertanyaan yang Sering Diajukan</h2>
+      <span class="star" aria-hidden="true"><svg viewBox="0 0 100 100"><defs><linearGradient id="sg2" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#fff"/><stop offset=".5" stop-color="#8fa3cc"/><stop offset="1" stop-color="#f4f7ff"/></linearGradient></defs><path fill="url(#sg2)" d="M50 0C54 34 66 46 100 50C66 54 54 66 50 100C46 66 34 54 0 50C34 46 46 34 50 0Z"/></svg></span>
+    </div>
+    <div class="faq-list">
+      <details open>
+        <summary>Kapan dan di mana event ini diadakan?</summary>
+        <p>Bisnis Online Summit 2026 diadakan pada Minggu, 17 Mei 2026, pukul 08.30–17.30 WIB di Taman Budaya Embung Giwangan, Yogyakarta.</p>
+      </details>
+      <details>
+        <summary>Siapa yang cocok ikut event ini?</summary>
+        <p>Seller Shopee atau marketplace lainnya, owner bisnis online, digital marketer, affiliate marketer, advertiser, digital creator, dan siapa pun yang ingin memahami perkembangan teknologi, AI, dan digital marketing untuk bisnis. Tidak harus menjadi expert. Yang penting, kamu punya keinginan untuk belajar, beradaptasi, dan mengembangkan bisnis.</p>
+      </details>
+      <details>
+        <summary>Apa saja materi yang akan dibahas?</summary>
+        <p>Shopee GMV Max, SEO di Era AI, Meta Ads &amp; Data Analytics, Customer Service dengan AI, TikTok GMV Max, dan berbagai insight lainnya termasuk perspektif teknologi, AI, bisnis digital, dan strategi pertumbuhan dari para praktisi.</p>
+      </details>
+      <details>
+        <summary>Siapa saja speaker-nya?</summary>
+        <p>Mahdi Assyarqi, Didik Arwinsyah, Ibrahim Vatih, Bondan Satria Nusantara, Hafian Fuad, dan Alda Rezma. Semua dibahas langsung oleh praktisi di bidangnya.</p>
+      </details>
+      <details>
+        <summary>Apa itu Special Talkshow?</summary>
+        <p>Selain sesi materi, kamu juga akan mendapatkan perspektif langsung dari para pelaku bisnis dan digital creator: Wildan Salim (Founder Fadkhera), Widya Supena (Founder Nutriflakes), dan Dara Sarasvati (Digital Creator). Satu panggung, berbagai pengalaman, berbagai perspektif tentang membangun bisnis dan personal brand di era digital.</p>
+      </details>
+      <details>
+        <summary>Bagaimana cara mendapatkan tiket?</summary>
+        <p>Klik tombol AMANKAN TIKET SEKARANG di halaman ini. Tempat terbatas, jangan sampai ketinggalan.</p>
+      </details>
+    </div>
+  </div>
+</section>
+
+<!-- FINAL CTA -->
+<section class="final" id="tiket">
+  <div class="wrap">
+    <h2>Saatnya Upgrade Strategi Bisnis Kamu.</h2>
+    <p class="big">Jangan hanya mengikuti perubahan teknologi.</p>
+    <p class="big"><strong>Pelajari cara memanfaatkannya.</strong></p>
+    <div class="box">
+      <p class="name">🚀 <strong>BISNIS ONLINE SUMMIT 2026</strong></p>
+      <p>📅 <strong>Minggu, 17 Mei 2026</strong></p>
+      <p>⏰ <strong>08.30–17.30 WIB</strong></p>
+      <p>📍 <strong>Taman Budaya Embung Giwangan, Yogyakarta</strong></p>
+    </div>
+    <div class="stack">
+      <h3>Upgrade Strategi.</h3>
+      <h3>Maksimalkan Profit.</h3>
+      <h3>Hadapi Era Teknologi &amp; AI.</h3>
+    </div>
+    <!-- Ganti href dengan link tiket / WhatsApp -->
+    <a class="cta" href="#tiket" target="_blank" rel="noopener"><strong>AMANKAN TIKET SEKARANG</strong></a>
+    <p class="small">Tempat terbatas. Jangan sampai ketinggalan.</p>
+  </div>
+</section>
+
+<script>
+(function(){
+  var t=new Date('2026-05-17T08:30:00+07:00').getTime();
+  function p(n){return String(n).padStart(2,'0')}
+  function tick(){
+    var s=Math.floor(Math.max(0,t-Date.now())/1000);
+    document.getElementById('cd-d').textContent=p(Math.floor(s/86400));
+    document.getElementById('cd-h').textContent=p(Math.floor(s%86400/3600));
+    document.getElementById('cd-m').textContent=p(Math.floor(s%3600/60));
+    document.getElementById('cd-s').textContent=p(s%60);
+  }
+  tick();setInterval(tick,1000);
+})();
+</script>
+</body>
+</html>
