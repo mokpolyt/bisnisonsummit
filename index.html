@@ -39,6 +39,22 @@ p{margin-bottom:18px;color:var(--text)}
 .muted{color:var(--muted)}
 .big{font-size:clamp(19px,2.6vw,24px);font-weight:500}
 
+/* top alert banner */
+.topbar{
+  background:#ffe600;
+  color:#e00000;
+  text-align:center;
+  font-weight:800;
+  font-size:15px;
+  letter-spacing:.02em;
+  padding:10px 14px;
+  padding-top:calc(10px + env(safe-area-inset-top,0px));
+  animation:blink 1s steps(1,end) infinite;
+}
+@keyframes blink{50%{opacity:0}}
+@media (prefers-reduced-motion:reduce){.topbar{animation:none}}
+@media (max-width:600px){.topbar{font-size:13px}}
+
 /* hero */
 .hero{
   padding:84px 0 88px;
@@ -252,6 +268,9 @@ p{margin-bottom:18px;color:var(--text)}
 </style>
 </head>
 <body>
+
+<!-- TOP ALERT BANNER -->
+<div class="topbar" role="alert">This is Duplicate Page</div>
 
 <!-- HERO -->
 <header class="hero" id="top">
